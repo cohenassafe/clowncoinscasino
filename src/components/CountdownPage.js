@@ -12,6 +12,9 @@ const CountdownPage = () => {
 
   // Target date: December 31, 2025 at 23:59:59
   const targetDate = new Date('2025-12-31T23:59:59').getTime();
+  
+  // Background image URL - using public folder approach
+  const backgroundImageUrl = '/assets/images/background_desktop.png';
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -44,28 +47,13 @@ const CountdownPage = () => {
     <div 
       className="countdown-page"
       style={{
-        backgroundImage: 'url(/assets/images/background_desktop.png)',
+        backgroundImage: `url(${backgroundImageUrl})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
       }}
     >
-      {/* Debug: Test image visibility */}
-      <img 
-        src="/assets/images/background_desktop.png" 
-        alt="Background" 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: -1,
-          opacity: 0.8
-        }}
-      />
-      
       <div className="countdown-content">
         <div className="title-section">
           <h1 className="main-title">
