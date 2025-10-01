@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "vercel-build": "npm run build || npm run build:no-lint"
+    "vercel-build": "npm run build"
   },
   "browserslist": {
     "production": [
@@ -37,5 +37,5 @@
   "devDependencies": {
     "gh-pages": "^6.1.0"
   },
-  "homepage": "https://yourusername.github.io/clowncoinscasino-landing"
+  "homepage": "."
 }
