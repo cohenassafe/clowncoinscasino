@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImage from '../../public/background_desktop.png';
 
 const CountdownPage = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -45,7 +44,7 @@ const CountdownPage = () => {
     <div 
       className="countdown-page"
       style={{
-        backgroundImage: `url(${backgroundImage})`
+        backgroundImage: 'url(/background_desktop.png)'
       }}
     >
       
