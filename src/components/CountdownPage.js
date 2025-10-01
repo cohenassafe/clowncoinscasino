@@ -41,12 +41,7 @@ const CountdownPage = () => {
   };
 
   return (
-    <div 
-      className="countdown-page"
-      style={{
-        backgroundImage: 'url(/background_desktop.png)'
-      }}
-    >
+    <div className="countdown-page">
       
       <div className="countdown-content">
         <div className="title-section">
