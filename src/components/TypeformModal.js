@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+// Global analytics functions (gtag, ga) are loaded via Google Analytics scripts
+
 const TypeformModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,8 +47,8 @@ const TypeformModal = () => {
 
   const trackEvent = (eventName, properties = {}) => {
     // Google Analytics 4
-    if (typeof gtag !== 'undefined') {
-      gtag('event', eventName, {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', eventName, {
         event_category: 'landing_page',
         event_label: 'clowncoins_casino',
         ...properties
