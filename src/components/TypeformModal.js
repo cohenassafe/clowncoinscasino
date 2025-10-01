@@ -63,8 +63,9 @@ const TypeformModal = () => {
     if (TYPEFORM_URL === 'FORM_URL') {
       return (
         <div className="typeform-placeholder">
-          <h3>Sign Up Form</h3>
-          <p>Please configure your Typeform URL in the TypeformModal component.</p>
+          <h3>Get Notified</h3>
+          <p>Be the first to know when ClownCoins Casino launches!</p>
+          <p>Please configure your Typeform URL to enable sign-ups.</p>
           <p>
             Contact: <a href="mailto:contact@clowncoinscasino.com">contact@clowncoinscasino.com</a>
           </p>
@@ -81,7 +82,7 @@ const TypeformModal = () => {
           frameBorder="0"
           marginHeight="0"
           marginWidth="0"
-          title="ClownCoins Casino Sign Up"
+          title="Get Notified - ClownCoins Casino"
           onLoad={() => setIsLoading(false)}
         />
       </div>

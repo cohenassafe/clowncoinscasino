@@ -1,5 +1,239 @@
 /* App-specific styles and component styles */
 
+/* Countdown Page - Full Screen Design */
+.countdown-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+  
+  /* BACKGROUND IMAGE PLACEMENT: Replace this background with your image */
+  /* Add your background image here */
+  /* background-image: url('/assets/images/background.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+}
+
+.countdown-content {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  padding: var(--spacing-lg);
+}
+
+/* Title Section */
+.title-section {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.main-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 0.9;
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent-yellow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.title-line {
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.title-line:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.title-line:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* Timer Section */
+.timer-section {
+  margin-bottom: var(--spacing-3xl);
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  min-width: 120px;
+  transition: all var(--transition-normal);
+}
+
+.time-unit:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-accent-yellow);
+  box-shadow: 0 10px 30px rgba(255, 209, 102, 0.3);
+}
+
+.time-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.time-label {
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.time-separator {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-yellow);
+  animation: pulse 2s infinite;
+}
+
+/* Expired Message */
+.expired-message {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.expired-message h2 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--color-accent-yellow);
+  margin-bottom: var(--spacing-md);
+}
+
+.expired-message p {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  color: var(--color-text-secondary);
+}
+
+/* Button Section */
+.button-section {
+  margin-bottom: var(--spacing-2xl);
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.notify-button {
+  background: linear-gradient(135deg, var(--color-accent-pink) 0%, #ff6b9d 100%);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 8px 25px rgba(255, 47, 109, 0.3);
+  border: 2px solid transparent;
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.notify-button:hover {
+  background: linear-gradient(135deg, #ff6b9d 0%, var(--color-accent-pink) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(255, 47, 109, 0.4);
+  border-color: var(--color-accent-yellow);
+}
+
+.notify-button:active {
+  transform: translateY(-1px);
+}
+
+.notify-button:focus {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 2px;
+}
+
+/* Legal Footer */
+.legal-footer {
+  animation: fadeInUp 0.8s ease-out 1.2s both;
+}
+
+.legal-footer p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .countdown-timer {
+    gap: var(--spacing-md);
+  }
+  
+  .time-unit {
+    min-width: 80px;
+    padding: var(--spacing-md);
+  }
+  
+  .time-separator {
+    display: none;
+  }
+  
+  .notify-button {
+    min-width: 250px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-content {
+    padding: var(--spacing-md);
+  }
+  
+  .time-unit {
+    min-width: 70px;
+    padding: var(--spacing-sm);
+  }
+  
+  .time-number {
+    font-size: 1.5rem;
+  }
+  
+  .time-label {
+    font-size: 0.75rem;
+  }
+}
+
 /* Container */
 .container {
   max-width: var(--container-max-width);
