@@ -9,13 +9,15 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   
-  /* Background Image */
-  background-image: url('/assets/images/background_desktop.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Background Image with Fallback */
+  background: 
+    url('/assets/images/background_desktop.png'),
+    linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed;
 }
 
 .countdown-content {

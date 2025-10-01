@@ -41,7 +41,30 @@ const CountdownPage = () => {
   };
 
   return (
-    <div className="countdown-page">
+    <div 
+      className="countdown-page"
+      style={{
+        backgroundImage: 'url(/assets/images/background_desktop.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Debug: Test image visibility */}
+      <img 
+        src="/assets/images/background_desktop.png" 
+        alt="Background" 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: -1,
+          opacity: 0.8
+        }}
+      />
       
       <div className="countdown-content">
         <div className="title-section">
