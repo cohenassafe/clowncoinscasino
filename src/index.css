@@ -238,40 +238,20 @@ ul, ol {
 
 /* Typeform Placeholder */
 .typeform-placeholder {
-  padding: var(--spacing-3xl);
+  padding: var(--spacing-2xl);
   text-align: center;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  margin: var(--spacing-lg) 0;
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 2px dashed var(--color-border);
 }
 
 .typeform-placeholder h3 {
   color: var(--color-accent-yellow);
-  margin-bottom: var(--spacing-lg);
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: var(--font-weight-bold);
-  text-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
+  margin-bottom: var(--spacing-md);
 }
 
 .typeform-placeholder p {
-  margin-bottom: var(--spacing-md);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(1rem, 3vw, 1.125rem);
-  line-height: 1.6;
-}
-
-.typeform-placeholder a {
-  color: var(--color-accent-pink);
-  text-decoration: none;
-  font-weight: var(--font-weight-semibold);
-  transition: all var(--transition-normal);
-}
-
-.typeform-placeholder a:hover {
-  color: var(--color-accent-yellow);
-  text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
+  margin-bottom: var(--spacing-sm);
 }
 
 /* High contrast mode support */
