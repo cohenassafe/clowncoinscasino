@@ -6,8 +6,8 @@ const TypeformModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Configuration - Replace with your actual Typeform URL
-  const TYPEFORM_URL = process.env.REACT_APP_TYPEFORM_URL || 'FORM_URL';
+  // Configuration - Your actual Typeform URL
+  const TYPEFORM_URL = process.env.REACT_APP_TYPEFORM_URL || 'https://form.typeform.com/to/xCPHxCxN';
 
   useEffect(() => {
     const handleOpenModal = () => {
@@ -60,7 +60,7 @@ const TypeformModal = () => {
   };
 
   const renderTypeformContent = () => {
-    if (TYPEFORM_URL === 'FORM_URL') {
+    if (TYPEFORM_URL === 'FORM_URL' || !TYPEFORM_URL) {
       return (
         <div className="typeform-placeholder">
           <h3>Get Notified</h3>
