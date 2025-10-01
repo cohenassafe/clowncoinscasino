@@ -1,0 +1,272 @@
+/* Base Styles - Resets, Variables, Typography */
+
+/* CSS Custom Properties */
+:root {
+  /* Colors */
+  --color-bg-primary: #1a1a1a;        /* Deep charcoal background */
+  --color-bg-secondary: #2d2d2d;       /* Lighter charcoal for cards */
+  --color-accent-yellow: #FFD166;      /* Coin yellow */
+  --color-accent-pink: #FF2F6D;        /* Accent pink/red */
+  --color-text-primary: #ffffff;       /* White text */
+  --color-text-secondary: #cccccc;     /* Light gray text */
+  --color-text-muted: #999999;         /* Muted text */
+  --color-border: #333333;             /* Border color */
+  
+  /* Typography */
+  --font-display: 'Fredoka', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 1rem;      /* 16px */
+  --spacing-md: 1.5rem;    /* 24px */
+  --spacing-lg: 2rem;      /* 32px */
+  --spacing-xl: 3rem;      /* 48px */
+  --spacing-2xl: 4rem;     /* 64px */
+  --spacing-3xl: 6rem;     /* 96px */
+  
+  /* Layout */
+  --container-max-width: 1200px;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(255, 209, 102, 0.3);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-accent-yellow);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-pink);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Focus Styles for Accessibility */
+*:focus {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 2px;
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-accent-yellow);
+  color: var(--color-bg-primary);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: var(--border-radius);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-yellow {
+  color: var(--color-accent-yellow);
+}
+
+.text-pink {
+  color: var(--color-accent-pink);
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Error States */
+.error {
+  color: var(--color-accent-pink);
+  border-color: var(--color-accent-pink);
+}
+
+/* Success States */
+.success {
+  color: var(--color-accent-yellow);
+  border-color: var(--color-accent-yellow);
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-top: 2px solid var(--color-accent-yellow);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  gap: var(--spacing-md);
+}
+
+/* Typeform Placeholder */
+.typeform-placeholder {
+  padding: var(--spacing-2xl);
+  text-align: center;
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 2px dashed var(--color-border);
+}
+
+.typeform-placeholder h3 {
+  color: var(--color-accent-yellow);
+  margin-bottom: var(--spacing-md);
+}
+
+.typeform-placeholder p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #666666;
+    --color-text-muted: #aaaaaa;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
