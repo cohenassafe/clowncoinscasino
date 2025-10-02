@@ -1,5 +1,4 @@
 import React from 'react';
-import clownCoinsImage from '../assets/clowncoinsimage.png';
 
 const CountdownPage = () => {
   const handleNotifyClick = () => {
@@ -9,18 +8,6 @@ const CountdownPage = () => {
 
   return (
     <div className="coming-soon-page">
-      {/* Dark gradient overlay on the left */}
-      <div className="gradient-overlay"></div>
-      
-      {/* Clown Coins Hero Image */}
-      <div className="hero-image-container">
-        <img 
-          src={clownCoinsImage} 
-          alt="Clown Coins Casino" 
-          className="hero-image"
-        />
-      </div>
-      
       <div className="coming-soon-content">
         <h1 className="casino-title">
           <span className="title-word">Clown</span>
