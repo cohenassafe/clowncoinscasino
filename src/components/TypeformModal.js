@@ -13,13 +13,17 @@ const TypeformModal = () => {
     const handleOpenModal = () => {
       setIsOpen(true);
       setIsLoading(true);
-      trackEvent('modal_open');
+      trackEvent('modal_open', { source: 'button_click' });
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
     };
 
     const handleCloseModal = () => {
       setIsOpen(false);
       setIsLoading(false);
-      trackEvent('modal_close');
+      trackEvent('modal_close', { source: 'user_action' });
+      // Restore body scroll
+      document.body.style.overflow = 'unset';
     };
 
     const handleKeyDown = (event) => {
@@ -29,91 +33,93 @@ const TypeformModal = () => {
     };
 
     // Listen for custom events
-    window.addEventListener('openModal', handleOpenModal);
-    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('openTypeformModal', handleOpenModal);
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener('openModal', handleOpenModal);
-      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('openTypeformModal', handleOpenModal);
+      document.removeEventListener('keydown', handleKeyDown);
+      // Cleanup on unmount
+      document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
-
-  const handleOverlayClick = (event) => {
-    if (event.target === event.currentTarget) {
-      setIsOpen(false);
-      trackEvent('modal_close', { source: 'overlay' });
-    }
-  };
 
   const trackEvent = (eventName, properties = {}) => {
     // Google Analytics 4
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', eventName, {
-        event_category: 'landing_page',
-        event_label: 'clowncoins_casino',
+        event_category: 'typeform_modal',
+        event_label: 'clowncoins_casino_signup',
         ...properties
       });
     }
-    
+
     // Console logging for development
     console.log(`📊 Event: ${eventName}`, properties);
   };
 
-  const renderTypeformContent = () => {
-    if (TYPEFORM_URL === 'FORM_URL' || !TYPEFORM_URL) {
-      return (
-        <div className="typeform-placeholder">
-          <h3>Get Notified</h3>
-          <p>Be the first to know when ClownCoins Casino launches!</p>
-          <p>Please configure your Typeform URL to enable sign-ups.</p>
-          <p>
-            Contact: <a href="mailto:contact@clowncoinscasino.com">contact@clowncoinscasino.com</a>
-          </p>
-        </div>
-      );
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setIsOpen(false);
+      setIsLoading(false);
+      trackEvent('modal_close', { source: 'overlay_click' });
+      document.body.style.overflow = 'unset';
     }
+  };
 
-    return (
-      <div className="typeform-widget">
-        <iframe
-          src={TYPEFORM_URL}
-          width="100%"
-          height="500"
-          frameBorder="0"
-          marginHeight="0"
-          marginWidth="0"
-          title="Get Notified - ClownCoins Casino"
-          onLoad={() => setIsLoading(false)}
-        />
-      </div>
-    );
+  const handleCloseClick = () => {
+    setIsOpen(false);
+    setIsLoading(false);
+    trackEvent('modal_close', { source: 'close_button' });
+    document.body.style.overflow = 'unset';
+  };
+
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+    trackEvent('typeform_loaded');
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="modal is-open">
-      <div 
-        className="modal__overlay" 
-        onClick={handleOverlayClick}
-        aria-hidden="true"
-      />
-      <div className="modal__content">
-        <button 
-          className="modal__close" 
-          onClick={() => setIsOpen(false)}
-          aria-label="Close modal"
-        >
-          &times;
-        </button>
-        <div className="modal__body">
+    <div className="typeform-modal-overlay" onClick={handleOverlayClick}>
+      <div className="typeform-modal-container">
+        <div className="typeform-modal-header">
+          <h3 className="typeform-modal-title">Get Notified First</h3>
+          <p className="typeform-modal-subtitle">Be the first to know when ClownCoins Casino launches!</p>
+          <button 
+            className="typeform-modal-close" 
+            onClick={handleCloseClick}
+            aria-label="Close modal"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div className="typeform-modal-content">
           {isLoading && (
-            <div className="loading-spinner">
-              <div className="spinner"></div>
+            <div className="typeform-loading">
+              <div className="typeform-spinner"></div>
               <p>Loading form...</p>
             </div>
           )}
-          {renderTypeformContent()}
+          
+          <iframe
+            src={TYPEFORM_URL}
+            width="100%"
+            height="600"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
+            title="ClownCoins Casino - Get Notified"
+            onLoad={handleIframeLoad}
+            style={{ 
+              opacity: isLoading ? 0 : 1,
+              transition: 'opacity 0.3s ease'
+            }}
+          />
         </div>
       </div>
     </div>

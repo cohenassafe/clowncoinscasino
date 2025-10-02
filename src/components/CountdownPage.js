@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImage from '../assets/background_desktop.png';
+import backgroundImage from '../assets/background_desktop.jpg';
 
 const CountdownPage = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -37,8 +37,8 @@ const CountdownPage = () => {
   }, [targetDate]);
 
   const handleNotifyClick = () => {
-    const event = new CustomEvent('openModal');
-    window.dispatchEvent(event);
+    const event = new CustomEvent('openTypeformModal');
+    document.dispatchEvent(event);
   };
 
   return (
