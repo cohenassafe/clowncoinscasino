@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import backgroundImage from '../assets/background_desktop.png';
 
 const CountdownPage = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -41,7 +42,16 @@ const CountdownPage = () => {
   };
 
   return (
-    <div className="countdown-page">
+    <div 
+      className="countdown-page"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="countdown-content">
         <div className="title-section">
           <h1 className="main-title">
