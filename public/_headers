@@ -1,0 +1,16 @@
+# Favicon caching
+/favicon.ico
+  Cache-Control: public, max-age=86400
+
+# Static assets caching
+/*.ico
+  Cache-Control: public, max-age=86400
+
+/*.png
+  Cache-Control: public, max-age=86400
+
+/*.jpg
+  Cache-Control: public, max-age=86400
+
+/*.svg
+  Cache-Control: public, max-age=86400

@@ -1,0 +1,5 @@
+# Favicon explicit handling
+/favicon.ico /favicon.ico 200
+
+# SPA routing - everything else goes to index.html
+/* /index.html 200
