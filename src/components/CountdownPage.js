@@ -12,9 +12,6 @@ const CountdownPage = () => {
 
   // Target date: December 31, 2025 at 23:59:59
   const targetDate = new Date('2025-12-31T23:59:59').getTime();
-  
-  // Background image URL - try different approaches
-  const backgroundImageUrl = '/background_desktop.png';
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -44,52 +41,7 @@ const CountdownPage = () => {
   };
 
   return (
-    <div 
-      className="countdown-page"
-      style={{
-        backgroundImage: `url(${backgroundImageUrl})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
-      }}
-    >
-      {/* Test with placeholder image first */}
-      <img 
-        src="https://via.placeholder.com/100x50/ff6b9d/ffffff?text=TEST" 
-        alt="Test" 
-        style={{
-          position: 'absolute',
-          top: 10,
-          right: 10,
-          width: '100px',
-          height: '50px',
-          objectFit: 'cover',
-          border: '2px solid red',
-          zIndex: 1000
-        }}
-        onLoad={() => console.log('Placeholder image loaded successfully')}
-        onError={(e) => console.log('Placeholder image failed to load:', e.target.src)}
-      />
-      
-      {/* Test with local image */}
-      <img 
-        src={backgroundImageUrl} 
-        alt="Local Test" 
-        style={{
-          position: 'absolute',
-          top: 70,
-          right: 10,
-          width: '100px',
-          height: '50px',
-          objectFit: 'cover',
-          border: '2px solid blue',
-          zIndex: 1000
-        }}
-        onLoad={() => console.log('Local image loaded successfully')}
-        onError={(e) => console.log('Local image failed to load:', e.target.src)}
-      />
-      
+    <div className="countdown-page">
       <div className="countdown-content">
         <div className="title-section">
           <h1 className="main-title">
