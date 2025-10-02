@@ -16,7 +16,7 @@ const CountdownPage = () => {
         </h1>
         
         <div className="coming-soon-subtext">
-          <p>Social casino fun is almost here. Spin slots, collect sweep coins, and get notified.</p>
+          <p>Don’t be a clown 🤡, sign up now and be the first to know.</p>
         </div>
 
         <button 
@@ -24,7 +24,7 @@ const CountdownPage = () => {
           onClick={handleNotifyClick}
           aria-label="Get notified when we launch"
         >
-          Notify Me
+          Be the First to Know
         </button>
 
         <div className="footer-disclaimer">
