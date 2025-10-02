@@ -21,11 +21,14 @@ const CountdownPage = () => {
       <div className="gradient-overlay"></div>
       
       <div className="coming-soon-content">
-        <h1 className="coming-soon-headline">Coming Soon</h1>
+        <h1 className="casino-title">
+          <span className="title-word">Clown</span>
+          <span className="title-word">Coins</span>
+          <span className="title-word">Casino</span>
+        </h1>
         
         <div className="coming-soon-subtext">
-          <p>ClownCoinsCasino is almost here.</p>
-          <p>Play slots, win sweep coins, and join the fun.</p>
+          <p>Social casino fun is almost here. Spin slots, collect sweep coins, and get notified.</p>
         </div>
 
         <button 
