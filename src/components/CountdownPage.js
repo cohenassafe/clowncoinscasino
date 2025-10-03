@@ -16,7 +16,7 @@ const CountdownPage = () => {
         </h1>
         
         <div className="coming-soon-subtext">
-          <p>Premium slots, thrilling tournaments, and exclusive rewards await. Join the most exciting social gaming platform.</p>
+          <p>Experience the future of crypto gaming with premium slots, instant withdrawals, and exclusive VIP rewards.</p>
         </div>
 
         <button 
@@ -24,11 +24,11 @@ const CountdownPage = () => {
           onClick={handleNotifyClick}
           aria-label="Get early access to Clown Coins Casino"
         >
-          Get Early Access
+Join The Revolution
         </button>
 
         <div className="footer-disclaimer">
-          <p>18+. No purchase necessary. Void where prohibited.</p>
+          <p>18+ • Licensed & Regulated • Fair Play Guaranteed</p>
         </div>
       </div>
     </div>
