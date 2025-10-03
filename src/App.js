@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './components/ProfessionalStyles.css';
 import CountdownPage from './components/CountdownPage';
 import TypeformModal from './components/TypeformModal';
 

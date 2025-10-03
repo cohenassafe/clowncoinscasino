@@ -95,7 +95,7 @@ const TypeformModal = () => {
           onClick={handleCloseClick}
           aria-label="Close modal"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
@@ -104,7 +104,7 @@ const TypeformModal = () => {
           {isLoading && (
             <div className="typeform-loading">
               <div className="typeform-spinner"></div>
-              <p>Loading form...</p>
+              <p className="text-sm text-muted-foreground">Loading form...</p>
             </div>
           )}
           
@@ -115,11 +115,11 @@ const TypeformModal = () => {
             frameBorder="0"
             marginHeight="0"
             marginWidth="0"
-            title="ClownCoins Casino - Get Notified"
+            title="Clown Coins Casino - Early Access Signup"
             onLoad={handleIframeLoad}
             style={{ 
               opacity: isLoading ? 0 : 1,
-              transition: 'opacity 0.3s ease'
+              transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           />
         </div>
