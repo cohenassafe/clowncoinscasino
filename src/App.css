@@ -128,7 +128,7 @@ body {
   width: 100%;
 }
 
-/* SHADCN Coming Soon Page - No Scroll */
+/* SHADCN Coming Soon Page - Enhanced */
 .coming-soon-page {
   height: 100vh;
   width: 100vw;
@@ -140,36 +140,39 @@ body {
   left: 0;
   overflow: hidden;
   background: 
-    radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, hsl(var(--ring) / 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
-    hsl(var(--background));
+    radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(var(--ring) / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.03) 0%, transparent 70%),
+    linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.3) 100%);
   padding: var(--spacing-6);
 }
 
-/* SHADCN Card Container - Perfect Centering */
+/* SHADCN Card Container - Enhanced */
 .coming-soon-content {
   position: relative;
   z-index: 3;
-  max-width: 480px;
+  max-width: 520px;
   width: 100%;
   background: hsl(var(--card));
   border: 1px solid hsl(var(--border));
-  border-radius: calc(var(--radius) * 3);
-  box-shadow: var(--shadow-2xl);
-  padding: var(--spacing-16);
+  border-radius: calc(var(--radius) * 4);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-20);
   text-align: center;
-  backdrop-filter: blur(12px);
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(16px);
+  animation: cardFloat 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* SHADCN Typography - Optimized */
+/* SHADCN Typography - Enhanced */
 .casino-title {
-  font-size: clamp(2.25rem, 4.5vw, 3rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin-bottom: var(--spacing-6);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-8);
   color: hsl(var(--foreground));
 }
 
@@ -177,14 +180,16 @@ body {
   display: block;
   background: linear-gradient(135deg, 
     hsl(var(--primary)) 0%, 
-    hsl(var(--ring)) 50%, 
-    hsl(var(--primary)) 100%);
-  background-size: 200% 200%;
+    hsl(var(--ring)) 30%, 
+    hsl(var(--primary)) 60%, 
+    hsl(var(--ring)) 100%);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 3s ease-in-out infinite;
-  margin-bottom: var(--spacing-2);
+  animation: gradientShift 4s ease-in-out infinite;
+  margin-bottom: var(--spacing-3);
+  position: relative;
 }
 
 @keyframes gradientShift {
@@ -192,28 +197,47 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-/* SHADCN Subtext - Compact */
+/* SHADCN Subtext - Enhanced */
 .coming-soon-subtext {
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-10);
+  position: relative;
 }
 
 .coming-soon-subtext p {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: hsl(var(--muted-foreground));
-  line-height: 1.5;
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+  line-height: 1.6;
+  font-weight: 500;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-/* SHADCN Button - Primary CTA */
+/* SHADCN Button - Enhanced CTA */
 .notify-me-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
+  border-radius: calc(var(--radius) * 2);
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all var(--transition-normal);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--ring)) 100%);
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: var(--spacing-5) var(--spacing-10);
+  cursor: pointer;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  animation: buttonPulse 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+  position: relative;
+  overflow: hidden;
+  min-width: 220px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .notify-me-button:focus-visible {
@@ -224,10 +248,6 @@ body {
 .notify-me-button:disabled {
   pointer-events: none;
   opacity: 0.5;
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  border: none;
-  padding: var(--spacing-4) var(--spacing-8);
   cursor: pointer;
   box-shadow: var(--shadow-lg);
   animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
@@ -252,14 +272,19 @@ body {
 }
 
 .notify-me-button:hover {
-  background: hsl(var(--primary) / 0.9);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, hsl(var(--ring)) 0%, hsl(var(--primary)) 100%);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.15),
+    0 8px 16px -4px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .notify-me-button:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 
+    0 15px 30px -8px rgba(0, 0, 0, 0.12),
+    0 4px 8px -2px rgba(0, 0, 0, 0.08);
 }
 
 /* SHADCN Footer - Minimal */
@@ -374,6 +399,28 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes cardFloat {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes buttonPulse {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

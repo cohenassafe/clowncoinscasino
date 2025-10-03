@@ -16,7 +16,7 @@ const CountdownPage = () => {
         </h1>
         
         <div className="coming-soon-subtext">
-          <p>The ultimate social gaming experience is coming soon.</p>
+          <p>Premium slots, thrilling tournaments, and exclusive rewards await. Join the most exciting social gaming platform.</p>
         </div>
 
         <button 
