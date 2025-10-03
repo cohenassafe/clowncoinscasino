@@ -115,7 +115,7 @@ const TypeformModal = () => {
             frameBorder="0"
             marginHeight="0"
             marginWidth="0"
-            title="Clown Coins Casino - Early Access Signup"
+            title="Clown Coins Casino - Premium Online Casino Early Access Registration"
             onLoad={handleIframeLoad}
             style={{ 
               opacity: isLoading ? 0 : 1,
