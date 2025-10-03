@@ -48,14 +48,20 @@ const TypeformModal = () => {
     // Google Analytics 4
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', eventName, {
-        event_category: 'typeform_modal',
-        event_label: 'clowncoins_casino_signup',
+        event_category: 'casino_signup',
+        event_label: 'clown_coins_casino_early_access',
+        value: properties.value || 0,
         ...properties
       });
     }
 
+    // Facebook Pixel
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', eventName, properties);
+    }
+
     // Console logging for development
-    console.log(`📊 Event: ${eventName}`, properties);
+    console.log(`🎰 Casino Event: ${eventName}`, properties);
   };
 
   const handleOverlayClick = (e) => {
