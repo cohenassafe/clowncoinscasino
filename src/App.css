@@ -128,42 +128,48 @@ body {
   width: 100%;
 }
 
-/* SHADCN Coming Soon Page */
+/* SHADCN Coming Soon Page - No Scroll */
 .coming-soon-page {
-  min-height: 100vh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
-  background: hsl(var(--background));
-  padding: var(--spacing-4);
+  background: 
+    radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(var(--ring) / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+    hsl(var(--background));
+  padding: var(--spacing-6);
 }
 
-/* SHADCN Card Container */
+/* SHADCN Card Container - Perfect Centering */
 .coming-soon-content {
   position: relative;
   z-index: 3;
-  max-width: 500px;
+  max-width: 480px;
   width: 100%;
   background: hsl(var(--card));
   border: 1px solid hsl(var(--border));
-  border-radius: calc(var(--radius) * 2);
-  box-shadow: var(--shadow-xl);
-  padding: var(--spacing-12);
+  border-radius: calc(var(--radius) * 3);
+  box-shadow: var(--shadow-2xl);
+  padding: var(--spacing-16);
   text-align: center;
-  backdrop-filter: blur(8px);
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* SHADCN Typography */
+/* SHADCN Typography - Optimized */
 .casino-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.025em;
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-6);
   color: hsl(var(--foreground));
 }
 
@@ -186,26 +192,26 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-/* SHADCN Subtext */
+/* SHADCN Subtext - Compact */
 .coming-soon-subtext {
-  margin-bottom: var(--spacing-10);
+  margin-bottom: var(--spacing-8);
 }
 
 .coming-soon-subtext p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: hsl(var(--muted-foreground));
-  line-height: 1.6;
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+  line-height: 1.5;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
 }
 
-/* SHADCN Button */
+/* SHADCN Button - Primary CTA */
 .notify-me-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   border-radius: var(--radius);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   transition: all var(--transition-fast);
   focus-visible:outline: 2px solid hsl(var(--ring));
@@ -215,12 +221,13 @@ body {
   background: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
   border: none;
-  padding: var(--spacing-3) var(--spacing-6);
+  padding: var(--spacing-4) var(--spacing-8);
   cursor: pointer;
-  box-shadow: var(--shadow-md);
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
   position: relative;
   overflow: hidden;
+  min-width: 200px;
 }
 
 .notify-me-button::before {
@@ -249,16 +256,16 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-/* SHADCN Footer */
+/* SHADCN Footer - Minimal */
 .footer-disclaimer {
-  margin-top: var(--spacing-8);
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+  margin-top: var(--spacing-6);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
 }
 
 .footer-disclaimer p {
   font-size: 0.75rem;
   color: hsl(var(--muted-foreground));
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 /* SHADCN Modal Overlay */
@@ -398,16 +405,21 @@ body {
   color: hsl(var(--muted-foreground));
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive - No Scroll Optimized */
 @media (max-width: 768px) {
+  .coming-soon-page {
+    padding: var(--spacing-4);
+  }
+
   .coming-soon-content {
-    padding: var(--spacing-8);
-    max-width: 90vw;
+    padding: var(--spacing-10);
+    max-width: 95vw;
+    max-height: 90vh;
   }
   
   .casino-title {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
-    margin-bottom: var(--spacing-6);
+    font-size: clamp(1.5rem, 7vw, 2.25rem);
+    margin-bottom: var(--spacing-4);
   }
   
   .title-word {
@@ -415,19 +427,23 @@ body {
   }
   
   .coming-soon-subtext {
-    margin-bottom: var(--spacing-8);
+    margin-bottom: var(--spacing-6);
   }
   
   .coming-soon-subtext p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .notify-me-button {
-    padding: var(--spacing-4) var(--spacing-6);
+    padding: var(--spacing-3) var(--spacing-6);
     font-size: 0.875rem;
-    min-width: 200px;
+    min-width: 180px;
   }
   
+  .footer-disclaimer {
+    margin-top: var(--spacing-4);
+  }
+
   .footer-disclaimer p {
     font-size: 0.6875rem;
   }
@@ -450,21 +466,35 @@ body {
 }
 
 @media (max-width: 480px) {
+  .coming-soon-page {
+    padding: var(--spacing-3);
+  }
+
   .coming-soon-content {
-    padding: var(--spacing-6);
+    padding: var(--spacing-8);
+    max-width: 98vw;
   }
   
   .casino-title {
-    margin-bottom: var(--spacing-4);
+    margin-bottom: var(--spacing-3);
+    font-size: clamp(1.25rem, 8vw, 1.75rem);
   }
   
   .coming-soon-subtext {
-    margin-bottom: var(--spacing-6);
+    margin-bottom: var(--spacing-5);
+  }
+  
+  .coming-soon-subtext p {
+    font-size: 0.8rem;
   }
   
   .notify-me-button {
-    min-width: 180px;
+    min-width: 160px;
     padding: var(--spacing-3) var(--spacing-5);
     font-size: 0.8125rem;
+  }
+
+  .footer-disclaimer {
+    margin-top: var(--spacing-3);
   }
 }

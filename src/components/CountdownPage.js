@@ -9,30 +9,26 @@ const CountdownPage = () => {
   return (
     <div className="coming-soon-page">
       <div className="coming-soon-content">
-        <div className="space-y-8">
-          <div className="space-y-6">
-            <h1 className="casino-title">
-              <span className="title-word">Clown</span>
-              <span className="title-word">Coins</span>
-              <span className="title-word">Casino</span>
-            </h1>
-            
-            <div className="coming-soon-subtext">
-              <p>Join the ultimate social gaming experience. Premium slots, exciting tournaments, and exclusive rewards await.</p>
-            </div>
-          </div>
+        <h1 className="casino-title">
+          <span className="title-word">Clown</span>
+          <span className="title-word">Coins</span>
+          <span className="title-word">Casino</span>
+        </h1>
+        
+        <div className="coming-soon-subtext">
+          <p>The ultimate social gaming experience is coming soon.</p>
+        </div>
 
-          <button 
-            className="notify-me-button" 
-            onClick={handleNotifyClick}
-            aria-label="Get early access to Clown Coins Casino"
-          >
-            Get Early Access
-          </button>
+        <button 
+          className="notify-me-button" 
+          onClick={handleNotifyClick}
+          aria-label="Get early access to Clown Coins Casino"
+        >
+          Get Early Access
+        </button>
 
-          <div className="footer-disclaimer">
-            <p>18+. No purchase necessary. Void where prohibited. Play responsibly.</p>
-          </div>
+        <div className="footer-disclaimer">
+          <p>18+. No purchase necessary. Void where prohibited.</p>
         </div>
       </div>
     </div>
