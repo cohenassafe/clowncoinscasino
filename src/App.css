@@ -9,14 +9,16 @@
 
 /* CSS Custom Properties */
 :root {
-  /* Colors */
-  --color-gold: #FFD700;
-  --color-green: #228B22;
+  /* Colors - Professional Modern Theme */
+  --color-primary: #6366F1; /* Indigo - Primary accent */
+  --color-secondary: #8B5CF6; /* Purple - Secondary accent */
+  --color-accent: #06B6D4; /* Cyan - Call-to-action */
   --color-white: #ffffff;
-  --color-light-grey: #CCCCCC;
-  --color-dark: #000000;
-  --color-dark-bg: #0a0a0a;
-  --color-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(34, 139, 34, 0.1) 50%, rgba(255, 215, 0, 0.1) 100%);
+  --color-light-grey: #E5E7EB; /* Light gray for text */
+  --color-medium-grey: #9CA3AF; /* Medium gray */
+  --color-dark: #111827; /* Dark gray instead of black */
+  --color-dark-bg: #0F172A; /* Very dark blue-gray */
+  --color-overlay: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(99, 102, 241, 0.1) 50%, rgba(139, 92, 246, 0.1) 100%);
   
   /* Typography */
   --font-family-primary: 'Inter', 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -75,11 +77,11 @@ body {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, 
-    #000000 0%, 
-    #1a1a1a 25%, 
-    #2d2d2d 50%, 
-    #1a1a1a 75%, 
-    #000000 100%);
+    #0F172A 0%, 
+    #1E293B 25%, 
+    #334155 50%, 
+    #1E293B 75%, 
+    #0F172A 100%);
   background-size: 400% 400%;
   animation: gradientShift 8s ease-in-out infinite;
 }
@@ -110,12 +112,13 @@ body {
 .title-word {
   display: block;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  color: var(--color-gold);
-  text-shadow: 
-    2px 2px 4px rgba(0, 0, 0, 0.8),
-    0 0 10px rgba(255, 215, 0, 0.3);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   margin-bottom: var(--spacing-xs);
-  animation: goldGlow 3s ease-in-out infinite alternate;
+  animation: modernGlow 4s ease-in-out infinite alternate;
 }
 
 .title-word:nth-child(2) {
@@ -126,17 +129,12 @@ body {
   animation-delay: 1s;
 }
 
-@keyframes goldGlow {
+@keyframes modernGlow {
   0% {
-    text-shadow: 
-      2px 2px 4px rgba(0, 0, 0, 0.8),
-      0 0 10px rgba(255, 215, 0, 0.3);
+    filter: brightness(1) saturate(1);
   }
   100% {
-    text-shadow: 
-      2px 2px 4px rgba(0, 0, 0, 0.8),
-      0 0 20px rgba(255, 215, 0, 0.6),
-      0 0 30px rgba(255, 215, 0, 0.4);
+    filter: brightness(1.1) saturate(1.2);
   }
 }
 
@@ -156,8 +154,8 @@ body {
 
 /* CTA Button */
 .notify-me-button {
-  background: linear-gradient(135deg, var(--color-gold) 0%, #ffdc00 100%);
-  color: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  color: var(--color-white);
   border: none;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-lg) var(--spacing-2xl);
@@ -171,8 +169,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   box-shadow: 
-    0 6px 20px rgba(255, 215, 0, 0.4),
-    0 0 0 1px rgba(255, 215, 0, 0.2);
+    0 6px 20px rgba(99, 102, 241, 0.3),
+    0 0 0 1px rgba(99, 102, 241, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -195,10 +193,10 @@ body {
 .notify-me-button:hover {
   transform: translateY(-3px);
   box-shadow: 
-    0 10px 30px rgba(255, 215, 0, 0.5),
-    0 0 30px rgba(255, 215, 0, 0.4),
-    0 0 0 1px rgba(255, 215, 0, 0.3);
-  background: linear-gradient(135deg, #ffdc00 0%, var(--color-gold) 100%);
+    0 10px 30px rgba(99, 102, 241, 0.4),
+    0 0 30px rgba(139, 92, 246, 0.3),
+    0 0 0 1px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 50%, var(--color-primary) 100%);
 }
 
 .notify-me-button:active {
@@ -241,13 +239,14 @@ body {
 }
 
 .typeform-modal-container {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   border-radius: var(--border-radius-lg);
   box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+    0 25px 50px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(99, 102, 241, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   max-width: 650px;
   width: 100%;
   max-height: 90vh;
@@ -261,8 +260,8 @@ body {
   position: absolute;
   top: var(--spacing-md);
   right: var(--spacing-md);
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid rgba(255, 215, 0, 0.5);
+  background: rgba(99, 102, 241, 0.2);
+  border: 2px solid rgba(99, 102, 241, 0.4);
   border-radius: 50%;
   width: 44px;
   height: 44px;
@@ -277,10 +276,10 @@ body {
 }
 
 .typeform-modal-close:hover {
-  background: rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 215, 0, 0.6);
+  background: rgba(99, 102, 241, 0.3);
+  border-color: rgba(139, 92, 246, 0.6);
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
 }
 
 .typeform-modal-content {
