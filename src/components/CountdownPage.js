@@ -23,27 +23,48 @@ const CountdownPage = () => {
         </ul>
       </div>
 
-      <div className="coming-soon-content">
-        <h2 className="casino-title">
-          <span className="title-word">Clown</span>
-          <span className="title-word">Coins</span>
-          <span className="title-word">Casino</span>
-        </h2>
-        
-        <div className="coming-soon-subtext">
-          <p>Play premium slots, collect sweep coins, and win amazing prizes! The ultimate social casino experience with no real money required. Join thousands of players having fun!</p>
+      <div className="split-layout">
+        {/* Left Side - Content */}
+        <div className="content-side">
+          <div className="coming-soon-content">
+            {/* Logo Placeholder - Replace with your logo */}
+            <div className="logo-placeholder">
+              LOGO
+            </div>
+            
+            <h1 className="casino-title">
+              <span className="title-word">Clown</span>
+              <span className="title-word">Coins</span>
+              <span className="title-word">Casino</span>
+            </h1>
+            
+            <div className="coming-soon-subtext">
+              <p>Play premium slots, collect sweep coins, and win amazing prizes! The ultimate social casino experience with no real money required. Join thousands of players having fun!</p>
+            </div>
+
+            <button 
+              className="notify-me-button" 
+              onClick={handleNotifyClick}
+              aria-label="Join Clown Coins Casino - Free Social Casino with Sweepstakes Prizes"
+            >
+              Join The Fun
+            </button>
+
+            <div className="footer-disclaimer">
+              <p>18+ • Free to Play • Sweepstakes Prizes • No Purchase Necessary</p>
+            </div>
+          </div>
         </div>
 
-        <button 
-          className="notify-me-button" 
-          onClick={handleNotifyClick}
-          aria-label="Join Clown Coins Casino - Free Social Casino with Sweepstakes Prizes"
-        >
-Join The Fun
-        </button>
-
-        <div className="footer-disclaimer">
-          <p>18+ • Free to Play • Sweepstakes Prizes • No Purchase Necessary</p>
+        {/* Right Side - Image Placeholder */}
+        <div className="image-side">
+          <div className="image-placeholder">
+            <div>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎰</div>
+              <div>Your Image Here</div>
+              <div style={{ fontSize: '0.875rem', marginTop: '0.5rem', opacity: 0.7 }}>Replace with your casino image</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
