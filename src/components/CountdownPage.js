@@ -10,16 +10,16 @@ const CountdownPage = () => {
     <div className="coming-soon-page">
       {/* Hidden SEO Content */}
       <div style={{ display: 'none' }}>
-        <h1>Clown Coins Casino - Premium Online Casino Platform</h1>
-        <p>Clown Coins Casino is a licensed and regulated online casino platform featuring premium slots, instant payouts, VIP rewards, and exclusive tournaments. Our social casino experience offers fair play guarantees, secure gaming, and 18+ responsible gambling.</p>
-        <h2>Casino Features</h2>
+        <h1>Clown Coins Casino - Free Social Casino with Sweepstakes Prizes</h1>
+        <p>Clown Coins Casino is a fun social casino platform where you can play premium slots for free, collect sweep coins, and win amazing prizes through sweepstakes. No real money required, no purchase necessary, just pure entertainment and excitement!</p>
+        <h2>Social Casino Features</h2>
         <ul>
-          <li>Premium online slots with instant payouts</li>
-          <li>VIP rewards program with exclusive benefits</li>
-          <li>Casino tournaments and competitions</li>
-          <li>Licensed and regulated gaming platform</li>
-          <li>Fair play guaranteed with secure transactions</li>
-          <li>18+ responsible gambling environment</li>
+          <li>Premium slots games completely free to play</li>
+          <li>Collect sweep coins and redeem for prizes</li>
+          <li>Daily free coins and bonus rewards</li>
+          <li>Social features - play with friends</li>
+          <li>Sweepstakes prizes - no purchase necessary</li>
+          <li>18+ entertainment, fun for everyone</li>
         </ul>
       </div>
 
@@ -31,19 +31,19 @@ const CountdownPage = () => {
         </h2>
         
         <div className="coming-soon-subtext">
-          <p>Experience the future of online gaming with premium slots, instant payouts, and exclusive VIP rewards. The ultimate social casino is coming soon.</p>
+          <p>Play premium slots, collect sweep coins, and win amazing prizes! The ultimate social casino experience with no real money required. Join thousands of players having fun!</p>
         </div>
 
         <button 
           className="notify-me-button" 
           onClick={handleNotifyClick}
-          aria-label="Get early access to Clown Coins Casino - Premium Online Casino Platform"
+          aria-label="Join Clown Coins Casino - Free Social Casino with Sweepstakes Prizes"
         >
-          Get Early Access
+Join The Fun
         </button>
 
         <div className="footer-disclaimer">
-          <p>18+ • Licensed & Regulated • Fair Play Guaranteed</p>
+          <p>18+ • Free to Play • Sweepstakes Prizes • No Purchase Necessary</p>
         </div>
       </div>
     </div>

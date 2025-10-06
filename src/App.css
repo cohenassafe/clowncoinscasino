@@ -141,10 +141,10 @@ body {
   left: 0;
   overflow: hidden;
   background: 
-    linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%),
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+    linear-gradient(135deg, #1a1a2e 0%, #16213e 20%, #0f3460 40%, #533483 60%, #1a1a2e 80%, #0a0a0a 100%),
+    radial-gradient(circle at 25% 25%, rgba(120, 119, 198, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.25) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 70%);
   padding: var(--spacing-8);
   position: relative;
 }
@@ -158,18 +158,28 @@ body {
   bottom: 0;
   background: 
     repeating-linear-gradient(
-      90deg,
+      45deg,
       transparent,
-      transparent 98px,
-      rgba(255, 255, 255, 0.03) 100px
+      transparent 20px,
+      rgba(255, 215, 0, 0.05) 22px,
+      rgba(255, 215, 0, 0.05) 24px,
+      transparent 26px
     ),
     repeating-linear-gradient(
-      0deg,
+      -45deg,
       transparent,
-      transparent 98px,
-      rgba(255, 255, 255, 0.03) 100px
+      transparent 20px,
+      rgba(255, 107, 107, 0.03) 22px,
+      rgba(255, 107, 107, 0.03) 24px,
+      transparent 26px
     );
   pointer-events: none;
+  animation: backgroundShimmer 8s ease-in-out infinite;
+}
+
+@keyframes backgroundShimmer {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
 }
 
 /* Full Screen Content - No Card */
@@ -197,19 +207,20 @@ body {
 .title-word {
   display: block;
   background: linear-gradient(135deg, 
-    #ffffff 0%, 
-    #7877c6 25%, 
-    #ff77c6 50%, 
-    #7877c6 75%, 
-    #ffffff 100%);
+    #ffd700 0%, 
+    #ff6b6b 20%, 
+    #4ecdc4 40%, 
+    #45b7d1 60%, 
+    #96ceb4 80%, 
+    #ffd700 100%);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: casinoGradient 3s ease-in-out infinite;
+  animation: casinoGradient 4s ease-in-out infinite;
   margin-bottom: var(--spacing-2);
   position: relative;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.6));
 }
 
 @keyframes casinoGradient {
@@ -271,15 +282,15 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: linear-gradient(135deg, #7877c6 0%, #ff77c6 100%);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffd700 50%, #4ecdc4 100%);
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   padding: var(--spacing-6) var(--spacing-12);
   cursor: pointer;
   box-shadow: 
-    0 20px 40px rgba(120, 119, 198, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 20px 40px rgba(255, 107, 107, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   animation: casinoButtonGlow 1s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
   position: relative;
   overflow: hidden;
@@ -321,10 +332,10 @@ body {
 }
 
 .notify-me-button:hover {
-  background: linear-gradient(135deg, #ff77c6 0%, #7877c6 100%);
+  background: linear-gradient(135deg, #4ecdc4 0%, #ffd700 50%, #ff6b6b 100%);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 
-    0 30px 60px rgba(255, 119, 198, 0.4),
+    0 30px 60px rgba(255, 215, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.4);
