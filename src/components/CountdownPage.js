@@ -15,7 +15,7 @@ const CountdownPage = () => {
           </h1>
           
           <div className="hero-subtext">
-            <p>Free-to-play social casino. Spin, collect sweep coins, and unlock prizes—no purchase required.</p>
+            <p>Free-to-play social casino. Spin, collect sweep coins, and unlock prizes - no purchase required.</p>
           </div>
 
           <button 
