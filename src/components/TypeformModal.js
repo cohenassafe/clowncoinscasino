@@ -7,7 +7,7 @@ const TypeformModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Configuration - Your actual Typeform URL
-  const TYPEFORM_URL = process.env.REACT_APP_TYPEFORM_URL || 'https://form.typeform.com/to/xCPHxCxN';
+  const TYPEFORM_URL = process.env.REACT_APP_TYPEFORM_URL || 'https://tally.so/r/mJageo';
 
   useEffect(() => {
     const handleOpenModal = () => {
