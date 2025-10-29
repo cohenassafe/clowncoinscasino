@@ -36,10 +36,6 @@ const CountdownPage = () => {
               <span className="trust-badge">No Purchase Necessary</span>
             </div>
           </div>
-
-          <div className="hero-legal">
-            <p>18+ • Free to Play • Sweepstakes Prizes • No Purchase Necessary</p>
-          </div>
         </div>
       </div>
 
