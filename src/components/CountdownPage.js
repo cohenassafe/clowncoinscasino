@@ -27,7 +27,7 @@ const CountdownPage = () => {
             GET EARLY ACCESS
           </button>
 
-          <div className="hero-disclaimer">We’ll notify you when Clown Coins opens!</div>
+          <div className="hero-disclaimer">We’ll notify you when Clown Coins launches!</div>
 
           <div className="hero-trust">
             <div className="trust-badges">
