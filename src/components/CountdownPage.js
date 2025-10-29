@@ -13,10 +13,10 @@ const CountdownPage = () => {
           <h1 className="hero-title">
             Clown Coins Casino
           </h1>
-          <p className="hero-tagline">Where fun spins win smiles.</p>
+          <p className="hero-tagline">Winning feels better here.</p>
           
           <div className="hero-subtext">
-            <p>Play for fun. Win real sweepstakes prizes. 100% legal across the U.S.</p>
+            <p>Play for fun. Win real sweepstakes prizes.</p>
           </div>
 
           <button 
