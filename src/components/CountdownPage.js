@@ -13,9 +13,10 @@ const CountdownPage = () => {
           <h1 className="hero-title">
             Clown Coins Casino
           </h1>
+          <p className="hero-tagline">Where fun spins win smiles.</p>
           
           <div className="hero-subtext">
-            <p>Free-to-play social casino. Spin, collect sweep coins, and unlock prizes - no purchase required.</p>
+            <p>Play for fun. Win real sweepstakes prizes. 100% legal across the U.S.</p>
           </div>
 
           <button 
@@ -23,8 +24,18 @@ const CountdownPage = () => {
             onClick={handleNotifyClick}
             aria-label="Join waitlist for Clown Coins Casino"
           >
-            JOIN WAITLIST
+            GET EARLY ACCESS
           </button>
+
+          <div className="hero-disclaimer">We’ll notify you when Clown Coins opens!</div>
+
+          <div className="hero-trust">
+            <div className="trust-badges">
+              <span className="trust-badge">18+ Responsible Play</span>
+              <span className="trust-badge">Sweepstakes Verified</span>
+              <span className="trust-badge">No Purchase Necessary</span>
+            </div>
+          </div>
 
           <div className="hero-legal">
             <p>18+ • Free to Play • Sweepstakes Prizes • No Purchase Necessary</p>
