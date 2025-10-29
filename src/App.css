@@ -121,14 +121,15 @@ body {
 /* Hero Refresh Styles */
 .coming-soon-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  background: linear-gradient(135deg, #6a59d1 0%, #b06ab3 40%, #ff7eb3 60%, #5aa9e6 100%);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 18s ease infinite;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  box-shadow: inset 0 0 200px rgba(10, 10, 20, 0.6);
 }
 
 /* Animated background overlay */
@@ -139,9 +140,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.18) 0%, transparent 50%);
   pointer-events: none;
   animation: backgroundShift 20s ease-in-out infinite;
 }
@@ -155,18 +156,30 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(3px 3px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.9), transparent),
-    radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(3px 3px at 160px 30px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 200px 60px, rgba(255, 255, 255, 0.5), transparent),
-    radial-gradient(2px 2px at 250px 90px, rgba(255, 255, 255, 0.6), transparent);
+    radial-gradient(3px 3px at 20px 30px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(3px 3px at 160px 30px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 200px 60px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(30px 30px at 60% 30%, rgba(255, 215, 130, 0.08), transparent), /* faint coin */
+    radial-gradient(24px 24px at 30% 70%, rgba(255, 165, 90, 0.06), transparent);
   background-repeat: repeat;
   background-size: 300px 200px;
   animation: particleFloat 20s linear infinite;
   pointer-events: none;
   opacity: 0.8;
+}
+
+/* Shimmer behind card */
+.hero-shimmer {
+  position: absolute;
+  inset: -20% -10% 0 -10%;
+  background: radial-gradient(60% 40% at 50% 0%, rgba(255, 222, 173, 0.25), rgba(255, 255, 255, 0) 70%);
+  filter: blur(20px);
+  z-index: 0;
+  pointer-events: none;
+  animation: backgroundShift 16s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
@@ -224,19 +237,15 @@ body {
   padding: 120px 60px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   position: relative;
   animation: fadeInUp 1.2s ease-out;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  border-radius: 32px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transform: perspective(1000px) rotateX(2deg);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: perspective(1000px) rotateX(1.5deg);
 }
 
 .hero-content:hover {
@@ -259,23 +268,12 @@ body {
 }
 
 /* Hero Title */
-.hero-title {
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 900;
-  line-height: 1.05;
-  margin: 0;
-  background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 20%, #4ECDC4 40%, #45B7D1 60%, #667eea 80%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.03em;
-  position: relative;
-  animation: titleGlow 4s ease-in-out infinite alternate;
-  text-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  transform: perspective(500px) rotateX(5deg);
-  transition: all 0.3s ease;
-}
+.hero-header { display: flex; flex-direction: column; gap: 12px; }
+.hero-logo { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+.hero-title { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; line-height: 1.05; margin: 0; letter-spacing: -0.03em; position: relative; text-shadow: 0 0 20px rgba(0, 0, 0, 0.25); filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)); }
+.hero-title-gradient { background: linear-gradient(135deg, #ff7eb3 0%, #ffd166 40%, #4ecdc4 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-title-solid { color: #ffffff; opacity: 0.95; }
+.hero-tagline { font-size: 1.125rem; color: rgba(255,255,255,0.9); margin: 0; }
 
 .hero-title:hover {
   transform: perspective(500px) rotateX(0deg) scale(1.02);
@@ -358,6 +356,19 @@ body {
     0 6px 20px rgba(0, 0, 0, 0.15);
   transform: perspective(500px) rotateX(5deg);
 }
+
+.hero-disclaimer { margin-top: 8px; font-size: 0.95rem; color: rgba(255,255,255,0.8); }
+
+.hero-trust { display: flex; align-items: center; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+.trust-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+.trust-badge { font-size: 0.85rem; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 8px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
+.legal-link { font-size: 0.9rem; color: #ffd166; text-decoration: underline; }
+
+.how-it-works { max-width: 800px; margin: 48px auto; padding: 0 24px; text-align: center; color: rgba(255,255,255,0.95); }
+.how-it-works h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.how-it-works p { margin: 0; }
+
+.site-footer { text-align: center; color: rgba(255,255,255,0.7); padding: 32px 0; }
 
 
 

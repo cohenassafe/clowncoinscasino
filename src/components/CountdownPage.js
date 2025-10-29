@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/clowncoinsimage.png';
 
 const CountdownPage = () => {
   const handleNotifyClick = () => {
@@ -10,27 +11,44 @@ const CountdownPage = () => {
     <div className="coming-soon-page">
       <div className="hero-container">
         <div className="hero-content">
-          <h1 className="hero-title">
-            Clown Coins Casino
-          </h1>
-          
+          <div className="hero-header">
+            <img src={logo} alt="Clown Coins logo" className="hero-logo" />
+            <h1 className="hero-title">
+              <span className="hero-title-gradient">Clown Coins</span> <span className="hero-title-solid">Casino</span>
+            </h1>
+            <p className="hero-tagline">Where fun spins win smiles.</p>
+          </div>
+
           <div className="hero-subtext">
-            <p>Free-to-play social casino. Spin, collect sweep coins, and unlock prizes - no purchase required.</p>
+            <p>Play for fun. Win real sweepstakes prizes. 100% legal across the U.S.</p>
           </div>
 
           <button 
             className="hero-cta-button" 
             onClick={handleNotifyClick}
-            aria-label="Join waitlist for Clown Coins Casino"
+            aria-label="Get early access to Clown Coins Casino"
           >
-            JOIN WAITLIST
+            Get Early Access
           </button>
+          <div className="hero-disclaimer">We’ll notify you when Clown Coins opens!</div>
 
-          <div className="hero-legal">
-            <p>18+ • Free to Play • Sweepstakes Prizes • No Purchase Necessary</p>
+          <div className="hero-trust">
+            <div className="trust-badges">
+              <span className="trust-badge">18+ Responsible Play</span>
+              <span className="trust-badge">Sweepstakes Verified</span>
+              <span className="trust-badge">No Purchase Necessary</span>
+            </div>
+            <a href="#official-rules" className="legal-link">View Official Rules →</a>
           </div>
         </div>
+
+        <div className="hero-shimmer" aria-hidden="true"></div>
       </div>
+
+      <section className="how-it-works" aria-label="How it works">
+        <h2>How it works</h2>
+        <p>Collect coins, play games, and redeem sweepstakes entries for real prizes.</p>
+      </section>
 
       {/* Hidden SEO Content */}
       <div className="sr-only">
@@ -46,6 +64,8 @@ const CountdownPage = () => {
           <li>18+ entertainment, fun for everyone</li>
         </ul>
       </div>
+
+      <footer className="site-footer">© Clown Coins Casino 2025</footer>
     </div>
   );
 };
